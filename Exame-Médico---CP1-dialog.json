@@ -1,0 +1,1174 @@
+{
+  "intents": [
+    {
+      "intent": "agendar_consulta",
+      "examples": [
+        {
+          "text": "agendar"
+        },
+        {
+          "text": "agendar uma consulta"
+        },
+        {
+          "text": "quero marcar uma consulta"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "finalizar_atendimento",
+      "examples": [
+        {
+          "text": "encerrar"
+        },
+        {
+          "text": "finalizar"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "funcionamento",
+      "examples": [
+        {
+          "text": "ate quando voces funcionam"
+        },
+        {
+          "text": "ate que horas estão abertos"
+        },
+        {
+          "text": "quais os horarios de funcionamento"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "servicos",
+      "examples": [
+        {
+          "text": "quais os serviços disponiveis"
+        },
+        {
+          "text": "serviço"
+        },
+        {
+          "text": "serviços"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "unidades",
+      "examples": [
+        {
+          "text": "onde voces estao?"
+        },
+        {
+          "text": "quais as unidades?"
+        },
+        {
+          "text": "unidades dispniveis"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "cpf",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "cpf",
+          "patterns": [
+            "(\\d{9}-\\d{2}) ",
+            "(\\d{11})",
+            "(\\d{3}.\\d{3}.\\d{3}-\\d{2})"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "doutor",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Edvan Davi",
+          "synonyms": [
+            "doutor edvan",
+            "doutor edvan davi",
+            "edvan",
+            "edvan davi"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Luana Souza",
+          "synonyms": [
+            "doutora luana",
+            "doutora souza",
+            "luana"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Rafael Romanini",
+          "synonyms": [
+            "doutor rafael",
+            "doutor romanini",
+            "rafael",
+            "rafael romanini",
+            "romanini"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "email",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "email",
+          "patterns": [
+            "^([\\w\\-]+\\.)*[\\w\\- ]+@([\\w\\- ]+\\.)+([\\w\\-]{2,3})$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "genero",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "feminino",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "masculino",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "prefiro nao dizer",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "nome",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "nome",
+          "patterns": [
+            "^\\w+ \\w+$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "pagamento",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "cartão",
+          "synonyms": [
+            "cartao",
+            "cartao de credito",
+            "cartao de debito",
+            "credito",
+            "debito"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dinheiro",
+          "synonyms": [
+            "a vista",
+            "em dinheiro",
+            "em nota"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "periodoDia",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "manha",
+          "synonyms": [
+            "manhã"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "noite",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "tarde",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sim-nao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "nao",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "sim",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "tipo_consulta",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "clínico geral",
+          "synonyms": [
+            "clinico"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dermatologista",
+          "synonyms": [
+            "derma"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "psiquiatria",
+          "synonyms": [
+            "psiquiatra"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "unidade",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Aclimação",
+          "synonyms": [
+            "aclimação"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Anhangabau",
+          "synonyms": [
+            "anhangabau"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Paulista",
+          "synonyms": [
+            "paulista"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Seja bem-vindo ao nosso Consultório Online! Como podemos te ajudar hoje?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_3_1710953623254",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1710963799361",
+      "context": {
+        "doutor": "@doutor"
+      },
+      "conditions": "@doutor",
+      "event_name": "input",
+      "dialog_node": "handler_10_1710963799362"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1710894525777",
+      "context": {
+        "unidade": "@unidade"
+      },
+      "conditions": "@unidade",
+      "event_name": "input",
+      "dialog_node": "handler_1_1710894525783"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Cadastro feito! O valor total da consulta ficou 249,90 reais.\nComo deseja pagar? Aceitamos Dinheiro e Cartão."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_4_1710962766214",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1710962766215",
+      "previous_sibling": "handler_4_1710962766215"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1711130711333",
+      "context": {
+        "periodoDia": "@periodoDia"
+      },
+      "conditions": "@periodoDia",
+      "event_name": "input",
+      "dialog_node": "handler_1_1711130711341"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Funcionamos de Segunda à Sexta das 7 às 22h."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_10_1711130711333",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1711130711341",
+      "previous_sibling": "handler_1_1711130711341"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Funcionamos 24h todos os dias da semana, qual seria o melhor horário para você?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_1_1710890671791",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1710890671797",
+      "previous_sibling": "handler_7_1710890671797"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1710974466712",
+      "context": {
+        "cpfDigitado": "@cpf.literal"
+      },
+      "conditions": "@cpf",
+      "event_name": "input",
+      "dialog_node": "handler_3_1710974466713"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Claro! Temos os seguintes serviços disponíveis:  \n• Clínico geral \n• Dermatologista \n• Psiquiatria\n\n Qual deseja marcar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_3_1710889536743",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1710889536749",
+      "previous_sibling": "handler_5_1710889536749"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual o seu gênero?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_5_1710962433996",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1710962433997",
+      "previous_sibling": "handler_8_1710962433997"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1710962766214",
+      "context": {
+        "pagamento": "@pagamento"
+      },
+      "conditions": "@pagamento",
+      "event_name": "input",
+      "dialog_node": "handler_4_1710962766215"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Nos fale seu melhor email"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_2_1710974498577",
+      "context": {
+        "emailDigitado": "@email.literal"
+      },
+      "event_name": "focus",
+      "dialog_node": "handler_4_1710974498578",
+      "previous_sibling": "handler_8_1710974498578"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1710889536743",
+      "context": {
+        "tipo_consulta": "@tipo_consulta"
+      },
+      "conditions": "@tipo_consulta",
+      "event_name": "input",
+      "dialog_node": "handler_5_1710889536749"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe o seu nome e sobrenome: "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_10_1710974445671",
+      "context": {
+        "nomeDigitado": "@nome.literal"
+      },
+      "event_name": "focus",
+      "dialog_node": "handler_5_1710974445672",
+      "previous_sibling": "handler_9_1710974445672"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Com qual doutor deseja marcar? (Edvan Davi, Rafael Romanini ou Luana Souza)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_3_1710963799361",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1710963799362",
+      "previous_sibling": "handler_10_1710963799362"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1710890671791",
+      "context": {
+        "horario": "@sys-time"
+      },
+      "conditions": "@sys-time",
+      "event_name": "input",
+      "dialog_node": "handler_7_1710890671797"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para qual dia deseja agendar sua consulta?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_9_1710902136277",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1710902136288",
+      "previous_sibling": "handler_8_1710902136288"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Agora o seu CPF: "
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_7_1710974466712",
+      "context": {
+        "cpfDigitado": "@cpf.literal"
+      },
+      "event_name": "focus",
+      "dialog_node": "handler_7_1710974466713",
+      "previous_sibling": "handler_3_1710974466713"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1710902136277",
+      "context": {
+        "data": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_8_1710902136288"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1710962433996",
+      "context": {
+        "genero": "@genero"
+      },
+      "conditions": "@genero",
+      "event_name": "input",
+      "dialog_node": "handler_8_1710962433997"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1710974498577",
+      "context": {
+        "emailDigitado": "@email.literal"
+      },
+      "conditions": "@email",
+      "event_name": "input",
+      "dialog_node": "handler_8_1710974498578"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Temos unidades no Anhangabau, Paulista e Aclimação.  \n\nQual unidade é melhor para você?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_1_1710894525777",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1710894525783",
+      "previous_sibling": "handler_1_1710894525783"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1710974445671",
+      "context": {
+        "nomeDigitado": "@nome.literal"
+      },
+      "conditions": "@nome",
+      "event_name": "input",
+      "dialog_node": "handler_9_1710974445672"
+    },
+    {
+      "type": "standard",
+      "title": "Se sim",
+      "parent": "node_8_1710953158801",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1710952359322"
+      },
+      "conditions": "@sim-nao:sim",
+      "dialog_node": "node_10_1710953489471"
+    },
+    {
+      "type": "standard",
+      "title": "IF Não",
+      "parent": "node_1_1710952359322",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1710953623254"
+      },
+      "conditions": "@sim-nao:nao",
+      "dialog_node": "node_10_1710954081670"
+    },
+    {
+      "type": "standard",
+      "title": "IF Sim",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Digite qual serviço deseja utilizar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1710952359322",
+      "conditions": "@sim-nao:sim",
+      "dialog_node": "node_10_1710956664690",
+      "previous_sibling": "node_10_1710954081670"
+    },
+    {
+      "type": "frame",
+      "title": "Finalização Cadastro",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$nomeDigitado, sua consulta agendada! Segue informações:\n\n• Tipo de consulta: $tipo_consulta\n• Data e hora: Dia $data, às $horario \n• Unidade: $unidade\n• Doutor(a): $doutor\n• Pagamento em: $pagamento\n\nSeus dados cadastrados: \n\n• CPF: $cpfDigitado\n• E-mail: $emailDigitado"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1710963621131",
+      "context": {},
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_10_1710960559218"
+    },
+    {
+      "type": "frame",
+      "title": "Unidades ",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_7_1710889467618",
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_1_1710889220550"
+    },
+    {
+      "type": "standard",
+      "title": "Serviços",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Contamos com os seguintes serviços: \n\n• Agendamento de consulta\n• Dúvidas sobre: Horários de funcionamento e Unidades\n\nDeseja utilizar algum de nossos serviços?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#servicos",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1710952359322",
+      "previous_sibling": "node_2_1710889224614"
+    },
+    {
+      "type": "standard",
+      "title": "Horários de Funcionamento",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Funcionamos de Segunda à Sexta das 7 às 22h."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1710952359322"
+      },
+      "conditions": "#funcionamento",
+      "dialog_node": "node_2_1710889224614",
+      "previous_sibling": "node_2_1710950973774"
+    },
+    {
+      "type": "standard",
+      "title": "Unidade S/ Agendamento",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Temos unidades no Anhangabau, Paulista e Aclimação."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1710952359322"
+      },
+      "conditions": "#unidades",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1710950973774",
+      "previous_sibling": "node_7_1710889136955"
+    },
+    {
+      "type": "standard",
+      "title": "Se não",
+      "parent": "node_8_1710953158801",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1710953623254"
+      },
+      "conditions": "@sim-nao:nao",
+      "dialog_node": "node_2_1710953585717",
+      "previous_sibling": "node_10_1710953489471"
+    },
+    {
+      "type": "frame",
+      "title": "Periodo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual o melhor horário?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1710902082297",
+      "conditions": "true",
+      "dialog_node": "node_2_1711130577818"
+    },
+    {
+      "type": "standard",
+      "title": "Finalizar Atendimento",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Finalizando atendimento, espero ter te ajudado! =)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#finalizar_atendimento",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1710953623254",
+      "previous_sibling": "node_1_1710952359322"
+    },
+    {
+      "type": "frame",
+      "title": "Escolha Doutor",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para finalizar o agendamento, responda as perguntas a seguir:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1710889220550",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "true",
+      "dialog_node": "node_4_1710963621131"
+    },
+    {
+      "type": "frame",
+      "title": "Agendar Consulta   ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Para qual dia deseja agendar sua consulta?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#agendar_consulta",
+      "dialog_node": "node_7_1710889136955",
+      "previous_sibling": "Bem-vindo",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "frame",
+      "title": "Horário Consulta",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Temos unidades no Anhangabau, Paulista e Aclimação. \nQual unidade é melhor para você?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1711130577818",
+      "conditions": "true",
+      "dialog_node": "node_7_1710889467618"
+    },
+    {
+      "type": "frame",
+      "title": "Data consulta",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No dia $data, ficaria melhor para você no período da manhã, tarde ou noite?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1710889136955",
+      "conditions": "true",
+      "dialog_node": "node_8_1710902082297"
+    },
+    {
+      "type": "frame",
+      "title": "Ajuda com algo mais",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Te ajudo com algo mais?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1710960559218",
+      "conditions": "true",
+      "dialog_node": "node_8_1710953158801",
+      "previous_sibling": "slot_4_1710962766214"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$nome, sua consulta agendada! Segue informações:\n\n• Tipo de consulta: $tipo_consulta\n• Data e hora: Dia $data, às $horario \n• Unidade: $unidade\n• Doutor(a): $doutor\n• Pagamento em: $pagamento\n\nSeus dados de cadastro:\n\n• CPF: $cpf\n• Email: $email\n• Gênero: $genero\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1710960559218",
+      "disabled": true,
+      "dialog_node": "response_10_1711073306267"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Temos unidades no Anhangabau, Paulista e Aclimação."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1710889220550",
+      "disabled": true,
+      "dialog_node": "response_8_1710905132018",
+      "previous_sibling": "node_4_1710963621131"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1710960559218",
+      "variable": "$nomeDigitado",
+      "dialog_node": "slot_10_1710974445671",
+      "previous_sibling": "response_10_1711073306267"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1711130577818",
+      "variable": "$periodoDia",
+      "dialog_node": "slot_10_1711130711333",
+      "previous_sibling": "node_7_1710889467618"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_7_1710889467618",
+      "variable": "$horario",
+      "dialog_node": "slot_1_1710890671791",
+      "previous_sibling": "node_1_1710889220550"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1710889220550",
+      "variable": "$unidade",
+      "dialog_node": "slot_1_1710894525777",
+      "previous_sibling": "response_8_1710905132018"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1710960559218",
+      "variable": "$emailDigitado",
+      "dialog_node": "slot_2_1710974498577",
+      "previous_sibling": "slot_7_1710974466712"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_7_1710889136955",
+      "variable": "$tipo_consulta",
+      "dialog_node": "slot_3_1710889536743",
+      "previous_sibling": "node_8_1710902082297"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_4_1710963621131",
+      "variable": "$doutor",
+      "dialog_node": "slot_3_1710963799361",
+      "previous_sibling": "node_10_1710960559218"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1710960559218",
+      "variable": "$pagamento",
+      "dialog_node": "slot_4_1710962766214",
+      "previous_sibling": "slot_5_1710962433996"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1710960559218",
+      "variable": "$genero",
+      "dialog_node": "slot_5_1710962433996",
+      "previous_sibling": "slot_2_1710974498577"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1710960559218",
+      "variable": "$cpfDigitado",
+      "dialog_node": "slot_7_1710974466712",
+      "previous_sibling": "slot_10_1710974445671"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1710902082297",
+      "variable": "$data",
+      "dialog_node": "slot_9_1710902136277",
+      "previous_sibling": "node_2_1711130577818"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "generative_ai": {
+      "slot_filling": {
+        "enabled": false
+      }
+    },
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores",
+      "use_connect_to_support_prompt": "Connect to support",
+      "single_answer_clarification_prompt": "Something else"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    }
+  },
+  "learning_opt_out": false,
+  "language": "pt-br",
+  "description": "",
+  "name": "Exame Médico - CP1-dialog"
+}
